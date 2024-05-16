@@ -1,0 +1,24 @@
+[
+    {
+      "profileName": "Outcome",
+      "resourceType": "OperationOutcome",
+      "template": "operationOutcomeTemplate.liquid"
+    },
+    {
+        "profileName": "Bundle",
+      "resourceType": "Bundle",
+      "template": "bundleTemplate.liquid"
+    },
+    {
+        "profileName": "Patient",
+        "resourceType": "Patient",
+        "template": "patienttemplate.liquid"
+    }
+  ,
+    {
+      "profileName": "MyBundle",
+      "resourceType": "Bundle",
+      "profileUrl": "http://myurl.com/profiles/Bundle",
+      "template": "bundleTemplate.liquid"
+    }
+  ]

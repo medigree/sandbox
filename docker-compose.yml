@@ -47,12 +47,12 @@ services:
       - hapi.fhir.ig_runtime_upload_enabled=true
       - hapi.fhir.custom_content_path=/custom
       - hapi.fhir.app_content_path=/apps
-      - hapi.fhir.fetch_remote_urls=true
-      - hapi.fhir.allow_external_references = true
-      - hapi.fhir.enable_repository_validating_interceptor = true
-      - hapi.fhir.refuse_to_fetch_third_party_urls = false
-      - hapi.fhir.requests_enabled = true
-      - hapi.fhir.responses_enabled = true
+      # - hapi.fhir.fetch_remote_urls=true
+      # - hapi.fhir.allow_external_references = true
+      # - hapi.fhir.enable_repository_validating_interceptor = true
+      # - hapi.fhir.refuse_to_fetch_third_party_urls = false
+      # - hapi.fhir.requests_enabled = true
+      # - hapi.fhir.responses_enabled = true
 
 
     volumes:
