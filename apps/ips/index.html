@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPS Viewer</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Fixed Header -->
+    <div class="header">
+        <div class="header-title">
+            <h1>International Patient Summary</h1>
+        </div>
+        <div class="patient-info-container">
+            <div id="patient-info" class="patient-info">
+                <div class="patient-details" id="patient-details"></div>
+                <div id="patient-address"></div>
+            </div>
+            <div class="collapsible-container">
+                <div id="author-card" class="card collapsible">Author</div>
+                <div id="author-content" class="content"></div>
+                <div id="attester-card" class="card collapsible">Attester</div>
+                <div id="attester-content" class="content"></div>
+                <div id="custodian-card" class="card collapsible">Custodian</div>
+                <div id="custodian-content" class="content"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <a href="#medication-summary" class="tab-meds"><i class="fas fa-pills"></i>Medication</a>
+        <a href="#allergies-intolerances" class="tab-allergies"><i class="fas fa-allergies"></i>Allergies</a>
+        <a href="#problem-list" class="tab-problems"><i class="fas fa-notes-medical"></i>Problems</a>
+        <a href="#immunizations" class="tab-immunizations"><i class="fas fa-syringe"></i>Immunizations</a>
+        <a href="#history-procedures" class="tab-procedures"><i class="fas fa-history"></i>Procedures</a>
+        <a href="#medical-devices" class="tab-devices"><i class="fas fa-laptop-medical"></i>Devices</a>
+        <a href="#diagnostic-results" class="tab-results"><i class="fas fa-vials"></i>Results</a>
+        <a href="#vital-signs" class="tab-vitals"><i class="fas fa-heartbeat"></i>Vital Signs</a>
+        <a href="#past-history-illness" class="tab-illness"><i class="fas fa-disease"></i>Past Illness</a>
+        <a href="#social-history" class="tab-social"><i class="fas fa-users"></i>Social History</a>
+        <a href="#functional-status" class="tab-functional"><i class="fas fa-wheelchair"></i>Functional Status</a>
+        <a href="#plan-care" class="tab-plan"><i class="fas fa-file-medical-alt"></i>Plan of Care</a>
+        <a href="#advance-directives" class="tab-advance"><i class="fas fa-file-signature"></i>Advance Directives</a>
+    </div>
+    <div class="main-content" id="main-content">
+        <div class="tab-content" id="displayOptionsContent">
+            <!-- List View -->
+            <div class="row tab-pane fade show active" id="list-view">
+                <div class="container-fluid">
+                    <div id="medication-summary" class="card mb-3 optional section tab-meds">
+                        <div class="section-header">
+                            <i class="fas fa-pills"></i>
+                            <span class="section-title">Medication</span>
+                        </div>
+                        <div class="card-body" id="medication-info">
+                            <p>No data available</p>
+                        </div>
+                    </div>
+                    <div id="allergies-intolerances" class="card mb-3 optional section tab-allergies">
+                        <div class="section-header">
+                            <i class="fas fa-allergies"></i>
+                            <span class="section-title">Allergies and Intolerances</span>
+                        </div>
+                        <div class="card-body" id="allergies-info">
+                            <p>No data available</p>
+                        </div>
+                    </div>
+                    <div id="problem-list" class="card mb-3 optional section tab-problems">
+                        <div class="section-header">
+                            <i class="fas fa-notes-medical"></i>
+                            <span class="section-title">Problem List</span>
+                        </div>
+                        <div class="card-body" id="problems-info">
+                            <p>No data available</p>
+                        </div>
+                    </div>
+                    <div id="immunizations" class="card mb-3 optional section tab-immunizations">
+                        <div class="section-header">
+                            <i class="fas fa-syringe"></i>
+                            <span class="section-title">Immunizations</span>
+                        </div>
+                        <div class="card-body" id="immunizations-info">
+                            <p>No data available</p>
+                        </div>
+                    </div>
+                    <div id="history-procedures" class="card mb-3 optional section tab-procedures">
+                        <div class="section-header">
+                            <i class="fas fa-history"></i>
+                            <span class="section-title">History of Procedures</span>
+                        </div>
+                        <div class="card-body" id="procedures-info">
+                            <p>No data available</p>
+                        </div>
+                    </div>
+                    <div id="medical-devices" class="card mb-3 optional section tab-devices">
+                        <div class="section-header">
+                            <i class="fas fa-laptop-medical"></i>
+                            <span class="section-title">Medical Devices</span>
+                        </div>
+                        <div class="card-body" id="devices-info">
+                            <p>No data available</p>
+                        </div>
+                    </div>
+                    <div id="diagnostic-results" class="card mb-3 optional section tab-results">
+                        <div class="section-header">
+                            <i class="fas fa-vials"></i>
+                            <span class="section-title">Diagnostic Results</span>
+                        </div>
+                        <div class="card-body" id="results-info">
+                            <p>No data available</p>
+                        </div>
+                    </div>
+                    <div id="vital-signs" class="card mb-3 optional section tab-vitals">
+                        <div class="section-header">
+                            <i class="fas fa-heartbeat"></i>
+                            <span class="section-title">Vital Signs</span>
+                        </div>
+                        <div class="card-body" id="vitals-info">
+                            <p>No data available</p>
+                        </div>
+                    </div>
+                    <div id="past-history-illness" class="card mb-3 optional section tab-illness">
+                        <div class="section-header">
+                            <i class="fas fa-disease"></i>
+                            <span class="section-title">Past History of Illness</span>
+                        </div>
+                        <div class="card-body" id="illness-info">
+                            <p>No data available</p>
+                        </div>
+                    </div>
+                    <div id="social-history" class="card mb-3 optional section tab-social">
+                        <div class="section-header">
+                            <i class="fas fa-users"></i>
+                            <span class="section-title">Social History</span>
+                        </div>
+                        <div class="card-body" id="social-info">
+                            <p>No data available</p>
+                        </div>
+                    </div>
+                    <div id="functional-status" class="card mb-3 optional section tab-functional">
+                        <div class="section-header">
+                            <i class="fas fa-wheelchair"></i>
+                            <span class="section-title">Functional Status</span>
+                        </div>
+                        <div class="card-body" id="functional-info">
+                            <p>No data available</p>
+                        </div>
+                    </div>
+                    <div id="plan-care" class="card mb-3 optional section tab-plan">
+                        <div class="section-header">
+                            <i class="fas fa-file-medical-alt"></i>
+                            <span class="section-title">Plan of Care</span>
+                        </div>
+                        <div class="card-body" id="plan-info">
+                            <p>No data available</p>
+                        </div>
+                    </div>
+                    <div id="advance-directives" class="card mb-3 optional section tab-advance">
+                        <div class="section-header">
+                            <i class="fas fa-file-signature"></i>
+                            <span class="section-title">Advance Directives</span>
+                        </div>
+                        <div class="card-body" id="advance-info">
+                            <p>No data available</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>

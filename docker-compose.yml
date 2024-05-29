@@ -47,6 +47,7 @@ services:
       - hapi.fhir.ig_runtime_upload_enabled=true
       - hapi.fhir.custom_content_path=/custom
       - hapi.fhir.app_content_path=/apps
+      - hapi.fhir.ips_enabled=true      
       # - hapi.fhir.fetch_remote_urls=true
       # - hapi.fhir.allow_external_references = true
       # - hapi.fhir.enable_repository_validating_interceptor = true

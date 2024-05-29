@@ -1,0 +1,202 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 10% 1fr;
+    grid-template-areas: 
+        "header header"
+        "sidebar main";
+}
+
+.header {
+    grid-area: header;
+    background-color: #f8f9fa;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.header-title {
+    margin-left: 3px;
+}
+
+.patient-info-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#patient-details {
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#patient-details p {
+    margin: 0 15px 0 0;
+}
+
+#patient-address {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.collapsible-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30%;
+}
+
+.collapsible {
+    background-color: #f8f9fa;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    padding: 10px;
+    cursor: pointer;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+}
+
+.collapsible.active {
+    border-bottom: 1px solid #ccc;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.content {
+    display: none;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-top: none;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background-color: #f8f9fa;
+    padding: 5px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+.sidebar a {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    margin-bottom: 5px;
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.sidebar a svg {
+    margin-right: 7px;
+}
+
+.sidebar a:hover {
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+.main-content {
+    grid-area: main;
+    padding: 10px;
+    overflow-y: auto;
+    background-color: #f0f0f0;
+}
+
+.required {
+    background-color: #f0d9d9;
+}
+
+.recommended {
+    background-color: #f0e4d9;
+}
+
+.optional {
+    background-color: #d9e4f0;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    height: 100%;
+    writing-mode: vertical-rl;
+    transform: rotate(0deg);
+    text-orientation: mixed;
+    background-color: transparent;
+    color: black;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    padding: 5px;
+    box-sizing: border-box;
+    width: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.section-header svg {
+    margin-top: 5px;
+    margin-bottom: 7px;
+}
+
+.section {
+    position: relative;
+    padding-left: 120px;
+    box-sizing: border-box;
+    min-height: 150px;
+    margin-bottom: .1rem !important;
+}
+
+.main-content section:target {
+    scroll-margin-top: 140px;
+}
+
+/* Sidebar link and section colors */
+.tab-meds {
+    background-color: #fff5f5;
+}
+
+.tab-allergies {
+    background-color: #fff8ee;
+}
+
+.tab-problems {
+    background-color: #fffff5;
+}
+
+.tab-immunizations {
+    background-color: #f5fff5;
+}
+
+.tab-procedures {
+    background-color: #f5faff;
+}
+
+.tab-devices {
+    background-color: #f9f5ff;
+}
+
+.tab-results {
+    background-color: #f5faff;
+}
+
+html {
+    scroll-behavior: smooth;
+}
