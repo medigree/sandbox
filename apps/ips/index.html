@@ -13,6 +13,7 @@
     <div class="header">
         <div class="header-title">
             <h1>International Patient Summary</h1>
+            <button id="toggleSearchPanel" class="btn btn-primary">Select Patient</button>
         </div>
         <div class="patient-info-container">
             <div id="patient-info" class="patient-info">
@@ -27,6 +28,24 @@
                 <div id="custodian-card" class="card collapsible">Custodian</div>
                 <div id="custodian-content" class="content"></div>
             </div>
+        </div>
+    </div>
+    <div id="search-panel" class="search-panel hidden">
+        <h3>Search Patient and IPS</h3>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="patientSelect">Select Patient</label>
+                <select id="patientSelect" class="form-control"></select>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="ipsSelect">Select IPS</label>
+                <select id="ipsSelect" class="form-control"></select>
+            </div>
+        </div>
+        <div id="patientDetails"></div>
+        <div class="form-row">
+            <button id="viewIpsButton" class="btn btn-primary">View IPS</button>
+            <button id="createIpsButton" class="btn btn-secondary">Create IPS</button>
         </div>
     </div>
     <!-- Sidebar -->

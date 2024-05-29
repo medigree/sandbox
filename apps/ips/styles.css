@@ -16,69 +16,50 @@ body {
     padding: 10px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     display: flex;
-    justify-content: space-between;
     align-items: center;
     z-index: 1000;
+    position: relative;
 }
 
 .header-title {
-    margin-left: 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-title h1 {
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+#toggle-search-panel {
+    margin-left: 10px;
 }
 
 .patient-info-container {
     display: flex;
     justify-content: space-between;
-    width: 100%;
-}
-
-#patient-details {
-    width: 70%;
-    display: flex;
-    flex-wrap: wrap;
     align-items: center;
-}
-
-#patient-details p {
-    margin: 0 15px 0 0;
-}
-
-#patient-address {
     width: 100%;
-    margin-top: 10px;
+}
+
+.patient-info {
+    flex: 0 0 70%;
+    margin-right: 10px;
 }
 
 .collapsible-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30%;
+    flex: 0 0 30%;
 }
 
-.collapsible {
-    background-color: #f8f9fa;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+.card.collapsible {
     margin-bottom: 5px;
-    padding: 10px;
     cursor: pointer;
-    text-align: left;
-    outline: none;
-    font-size: 15px;
-}
-
-.collapsible.active {
-    border-bottom: 1px solid #ccc;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
 }
 
 .content {
     display: none;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-top: none;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+    margin-bottom: 5px;
 }
 
 .sidebar {
@@ -87,7 +68,7 @@ body {
     padding: 5px;
     box-shadow: 2px 0 5px rgba(0,0,0,0.1);
     overflow-y: auto;
-    z-index: 1000;
+    z-index: 999;
 }
 
 .sidebar a {
@@ -199,4 +180,184 @@ body {
 
 html {
     scroll-behavior: smooth;
+}
+
+.search-panel {
+    width: 60%; /* Adjust this percentage as needed */
+    margin: 20px auto; /* Center the panel */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.hidden {
+    display: none;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 10% 1fr;
+    grid-template-areas: 
+        "header header"
+        "sidebar main";
+}
+
+.header {
+    grid-area: header;
+    background-color: #f8f9fa;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.header-title h1 {
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+.search-panel {
+    position: absolute;
+    top: 50px;
+    left: 20px;
+    width: 400px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 20px;
+    border-radius: 5px;
+    z-index: 2000;
+}
+
+.search-panel.hidden {
+    display: none;
+}
+
+.search-panel h3 {
+    margin-top: 0;
+}
+
+.search-panel .form-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.search-panel .form-group {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.search-panel .form-group:last-child {
+    margin-right: 0;
+}
+
+.patient-info.hidden {
+    display: none;
+}
+
+.patient-details p {
+    margin-bottom: 0px!important;
+}
+
+.collapsible-container {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+
+.header {
+    grid-area: header;
+    background-color: #f8f9fa;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.header-title {
+    display: flex;
+    align-items: center;
+}
+
+.header-title h1 {
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+.patient-info-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.patient-info {
+    flex: 2;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-right: 10px;
+}
+
+.patient-info table {
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.patient-info th, .patient-info td {
+    padding: 8px;
+    vertical-align: middle;
+}
+
+.collapsible-container {
+    flex: 1;
+}
+
+.card.collapsible {
+    cursor: pointer;
+}
+
+.card.collapsible + .content {
+    display: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.search-panel {
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    width: 60%;
+    max-width: 400px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 10px;
+    z-index: 1001;
+}
+
+.form-inline label {
+    margin-right: 10px;
+}
+
+.form-inline select {
+    margin-right: 10px;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0,0,0,.05);
 }
