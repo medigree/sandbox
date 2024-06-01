@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual Validation</title>
+</head>
+<body>
+    <h1>Pending Validation</h1>
+    <p id="message">Please validate the current step by updating the status file.</p>
+    <button onclick="updateStatus('pass')">Pass</button>
+    <button onclick="updateStatus('fail')">Fail</button>
+    <p>After clicking a button, manually edit the status file located at <code>src/test/resources/com/example/status.txt</code> and set its content to "pass" or "fail".</p>
+
+    <script>
+        function updateStatus(status) {
+            document.getElementById('message').innerText = 'Validation ' + status + '. Please update the status file to proceed.';
+            alert('Please manually update the status.txt file with: ' + status);
+        }
+    </script>
+</body>
+</html>

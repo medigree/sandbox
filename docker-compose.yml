@@ -3,7 +3,7 @@ version: "3.9"
 services:
   fhir-server:
     #image: costateixeira/hapistarter:2.0.0
-    image: hapiproject/hapi:latest
+    image: costateixeira/l4lit:latest
     restart: unless-stopped
     container_name: ${server_name}
     ports:
@@ -54,6 +54,19 @@ services:
       # - hapi.fhir.refuse_to_fetch_third_party_urls = false
       # - hapi.fhir.requests_enabled = true
       # - hapi.fhir.responses_enabled = true
+
+      - hapi.fhir.implementationguides.ips.packageUrl=https://hl7.org/fhir/uv/ips/package.tgz
+      - hapi.fhir.implementationguides.ips.name=hl7.fhir.uv.ips
+      - hapi.fhir.implementationguides.ips.version=1.1.0
+      - hapi.fhir.implementationguides.ips.reloadExisting=true
+      - hapi.fhir.implementationguides.ips.installMode=STORE_AND_INSTALL
+
+      - hapi.fhir.implementationguides.pcf.packageUrl=https://profiles.ihe.net/ITI/PCF/package.tgz
+      - hapi.fhir.implementationguides.pcf.name=ihe.iti.pcf
+      - hapi.fhir.implementationguides.pcf.version=1.1.0
+      - hapi.fhir.implementationguides.pcf.reloadExisting=true
+      - hapi.fhir.implementationguides.pcf.installMode=STORE_AND_INSTALL
+
 
 
     volumes:
